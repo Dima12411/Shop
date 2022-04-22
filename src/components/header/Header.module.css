@@ -3,6 +3,22 @@
     font-size: 20px;
 }
 
+.nav {
+    float: right;
+    list-style: none;
+}
+
+.nav li {
+    display: inline;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: opacity 500ms ease;
+}
+
+.nav li:hover {
+    opacity: 0.5;
+}
+
 .presentation {
     margin: 50px 0;
     background: url('./../../common/img/bg.jpeg') no-repeat;
