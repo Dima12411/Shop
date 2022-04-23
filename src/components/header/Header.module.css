@@ -34,7 +34,7 @@
 .presentation:after {
     content: 'Лучшие товары для вашего дома';
     position: absolute;
-    top: 30px;
+    top: 25px;
     left: 160px;
     width: 300px;
     font-size: 40px;
@@ -44,7 +44,7 @@
 .presentation:before {
     content: 'по низким ценам';
     position: absolute;
-    top: 180px;
+    top: 175px;
     left: 160px;
     width: 300px;
     font-size: 15px;
