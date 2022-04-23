@@ -2,10 +2,20 @@ import React from 'react';
 import styles from './App.module.css'
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import Items from "./components/items/Items";
+
+export type StateItemsType = {
+    id: number
+    title: string
+    img: string
+    desc: string
+    category: string
+    price: string
+}
 
 function App() {
 
-    const stateItems = [
+    const stateItems: Array<StateItemsType> = [
         {
             id: 1,
             title: 'Стул',
@@ -60,6 +70,7 @@ function App() {
     return (
         <div className={styles.wrapper}>
             <Header/>
+            <Items items={stateItems}/>
             <Footer/>
         </div>
     );
