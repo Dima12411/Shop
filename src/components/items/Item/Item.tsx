@@ -13,7 +13,7 @@ const Item = ({item, ...props}: PropsType) => {
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
             <b>{item.price}$</b>
-            <div className={styles.addToCart}>+</div>
+            <button className={styles.addToCart}>+</button>
         </div>
     );
 };
