@@ -9,10 +9,13 @@ type ItepmsProps = {
 
 const Items = (props: ItepmsProps) => {
     return (
-        <main>
+        <main className={styles.main}>
             {props.items.map(el => {
                 return (
-                    <Item key={el.id} item={el}/>
+                    <Item
+                        key={el.id}
+                        item={el}
+                    />
                 )
             })}
         </main>

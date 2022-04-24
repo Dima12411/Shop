@@ -1,0 +1,21 @@
+.item {
+    width: 30%;
+    margin-bottom: 50px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transition: transform 500ms ease;
+}
+
+.item img:hover {
+    transform: scale(1.05)
+}
+
+.item h2, .item p, .item b {
+    margin: 10px 20px;
+    color: #333;
+}

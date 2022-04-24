@@ -19,7 +19,7 @@ function App() {
         {
             id: 1,
             title: 'Стул',
-            img: '',
+            img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'chairs',
             price: '49,99'
@@ -27,7 +27,7 @@ function App() {
         {
             id: 2,
             title: 'Стол',
-            img: '',
+            img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'tables',
             price: '249,00'
@@ -35,7 +35,7 @@ function App() {
         {
             id: 3,
             title: 'Диван',
-            img: '',
+            img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'sofas',
             price: '329,99'
@@ -43,7 +43,7 @@ function App() {
         {
             id: 4,
             title: 'Шкаф',
-            img: '',
+            img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'wardrobes',
             price: '110,99'
@@ -51,7 +51,7 @@ function App() {
         {
             id: 5,
             title: 'Кресло',
-            img: '',
+            img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'armchairs',
             price: '79,00'
@@ -59,7 +59,7 @@ function App() {
         {
             id: 6,
             title: 'Кровать',
-            img: '',
+            img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'beds',
             price: '380,99'
