@@ -10,7 +10,7 @@ const Header = () => {
     }
 
     return (
-        <header>
+        <header className={styles.header}>
             <div>
                 <span className={styles.logo}>Fame House</span>
                 <ul className={styles.nav}>
@@ -20,6 +20,12 @@ const Header = () => {
                 </ul>
                 <FaShoppingCart className={styles.shop_cart_button + ' ' + `${cartOpen && 'active'}`}
                                 onClick={onClickHandler}/>
+
+                {cartOpen && (
+                    <div className={styles.shop_cart}>
+
+                    </div>
+                )}
             </div>
             <div className={styles.presentation}></div>
         </header>

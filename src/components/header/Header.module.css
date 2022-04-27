@@ -1,3 +1,7 @@
+.header {
+    position: relative;
+}
+
 .logo {
     font-weight: 600;
     font-size: 20px;
@@ -28,6 +32,15 @@
 .shop_cart_button:hover,
 .shop_cart_button.active {
     color: #dc3d3d;
+}
+
+.shop_cart {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    min-height: 100px;
+    background: #fafafa;
 }
 
 .presentation {
