@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Header.module.css'
-import { FaShoppingCart } from "react-icons/fa";
+import {FaShoppingCart} from "react-icons/fa";
 
 
 const Header = () => {
+    const [cartOpen, setCartOpen] = useState<boolean>(false)
+    const onClickHandler = () => {
+        setCartOpen(!cartOpen)
+    }
+
     return (
         <header>
             <div>
@@ -13,7 +18,8 @@ const Header = () => {
                     <li>Контакты</li>
                     <li>Кабинет</li>
                 </ul>
-                <FaShoppingCart className={styles.shop_cart_button}/>
+                <FaShoppingCart className={styles.shop_cart_button + ' ' + `${cartOpen && 'active'}`}
+                                onClick={onClickHandler}/>
             </div>
             <div className={styles.presentation}></div>
         </header>
