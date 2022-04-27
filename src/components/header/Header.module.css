@@ -26,12 +26,13 @@
 .shop_cart_button {
     float: right;
     cursor: pointer;
-    transition: color 500ms ease;
+    transition: color, transform 500ms ease;
 }
 
 .shop_cart_button:hover,
 .shop_cart_button.active {
     color: #dc3d3d;
+    transform: scale(1.5)
 }
 
 .shop_cart {
@@ -41,6 +42,9 @@
     width: 450px;
     min-height: 100px;
     background: #fafafa;
+    -webkit-box-shadow: 4px 5px 15px -7px #606060;
+    box-shadow: 4px 5px 15px -7px #606060;
+    z-index: 1000;
 }
 
 .presentation {
