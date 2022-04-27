@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './Header.module.css'
+import { FaShoppingCart } from "react-icons/fa";
+
 
 const Header = () => {
     return (
@@ -11,6 +13,7 @@ const Header = () => {
                     <li>Контакты</li>
                     <li>Кабинет</li>
                 </ul>
+                <FaShoppingCart className={styles.shop_cart_button}/>
             </div>
             <div className={styles.presentation}></div>
         </header>

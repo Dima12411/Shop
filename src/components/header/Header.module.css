@@ -19,6 +19,17 @@
     opacity: 0.5;
 }
 
+.shop_cart_button {
+    float: right;
+    cursor: pointer;
+    transition: color 500ms ease;
+}
+
+.shop_cart_button:hover,
+.shop_cart_button.active {
+    color: #dc3d3d;
+}
+
 .presentation {
     margin: 50px 0;
     background: url('./../../common/img/bg.jpeg') no-repeat;
