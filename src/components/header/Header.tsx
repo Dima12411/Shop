@@ -6,6 +6,7 @@ import Order from "../order/Order";
 
 type PropsType = {
     orders: Array<StateItemsType>
+    onDelete: (id: number) => void
 }
 
 const Header = ({orders, ...props}: PropsType) => {

@@ -77,9 +77,13 @@ function App() {
         !isInArray && setOrders([...orders, {...item}])
     }
 
+    const deleteOrder = (id: number) => {
+
+    }
+
     return (
         <div className={styles.wrapper}>
-            <Header orders={orders}/>
+            <Header orders={orders} onDelete={deleteOrder}/>
             <Items items={stateItems} onAdd={addToOrder}/>
             <Footer/>
         </div>
