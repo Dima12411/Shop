@@ -16,6 +16,8 @@ const Header = ({orders, onDelete, ...props}: PropsType) => {
     }
 
     const showOrders = (orders:  Array<StateItemsType>) => {
+        let sum = 0
+        orders.forEach(el => sum += Number.parseFloat(el.price))
         return (
             <div>
                 {orders.map(el => {
@@ -26,6 +28,7 @@ const Header = ({orders, onDelete, ...props}: PropsType) => {
                         />
                     )
                 })}
+                <p className={styles.sum_orders}>Сумма: {sum.toFixed(2)}$</p>
             </div>
         )
     }

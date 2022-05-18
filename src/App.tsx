@@ -21,7 +21,7 @@ function App() {
             img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'chairs',
-            price: '49,99'
+            price: '49.99'
         },
         {
             id: 2,
@@ -29,7 +29,7 @@ function App() {
             img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'tables',
-            price: '249,00'
+            price: '249.00'
         },
         {
             id: 3,
@@ -37,7 +37,7 @@ function App() {
             img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'sofas',
-            price: '329,99'
+            price: '329.99'
         },
         {
             id: 4,
@@ -45,7 +45,7 @@ function App() {
             img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'wardrobes',
-            price: '110,99'
+            price: '110.99'
         },
         {
             id: 5,
@@ -53,7 +53,7 @@ function App() {
             img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'armchairs',
-            price: '79,00'
+            price: '79.00'
         },
         {
             id: 6,
@@ -61,7 +61,7 @@ function App() {
             img: 'chair.jpg',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'beds',
-            price: '380,99'
+            price: '380.99'
         },
 
     ])

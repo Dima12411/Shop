@@ -13,7 +13,6 @@ const Order = ({item, onDelete, ...props}: PropsType) => {
         <div className={styles.item}>
             <img src={'./img/' + item.img} alt='Здесь дожна быть картинка'/>
             <h2>{item.title}</h2>
-            <p>{item.desc}</p>
             <b>{item.price}$</b>
             <FaTrash className={styles.delete_icon}
                      onClick={() => onDelete(item.id)}
