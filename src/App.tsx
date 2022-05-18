@@ -67,8 +67,14 @@ function App() {
     ])
     const [orders, setOrders] = useState<Array<StateItemsType>>([])
 
-    const addToOrder = (item: any) => {
-        setOrders([...orders, {...item}])
+    const addToOrder = (item: StateItemsType) => {
+        let isInArray = false
+        orders.forEach(el => {
+            if (el.id === item.id) {
+                isInArray = true
+            }
+        })
+        !isInArray && setOrders([...orders, {...item}])
     }
 
     return (

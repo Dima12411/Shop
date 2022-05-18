@@ -28,7 +28,7 @@ const Header = ({orders, ...props}: PropsType) => {
 
     const showNothing = () => {
         return (
-            <div className={styles.empty}>
+            <div className={styles.shop_cart_empty}>
                 <h2>Товаров нет</h2>
             </div>
         )

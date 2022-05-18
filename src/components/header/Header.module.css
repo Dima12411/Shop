@@ -48,6 +48,11 @@
     padding-bottom: 0;
 }
 
+.shop_cart_empty h2{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
 .presentation {
     margin: 50px 0;
     background: url('./../../common/img/bg.jpeg') no-repeat;
