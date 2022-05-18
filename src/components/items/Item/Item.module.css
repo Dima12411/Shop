@@ -13,7 +13,8 @@
 }
 
 .item img:hover {
-    transform: scale(1.05)
+    transform: scale(1.05);
+    border-radius: 10px 10px 0 0;
 }
 
 .item h2, .item p, .item b {
