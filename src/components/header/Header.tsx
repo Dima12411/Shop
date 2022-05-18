@@ -14,6 +14,26 @@ const Header = ({orders, ...props}: PropsType) => {
         setCartOpen(!cartOpen)
     }
 
+    const showOrders = (orders:  Array<StateItemsType>) => {
+        return (
+            <div>
+                {orders.map(el => {
+                    return (
+                        <Order key={el.id} item={el}/>
+                    )
+                })}
+            </div>
+        )
+    }
+
+    const showNothing = () => {
+        return (
+            <div className={styles.empty}>
+                <h2>Товаров нет</h2>
+            </div>
+        )
+    }
+
     return (
         <header className={styles.header}>
             <div>
@@ -28,11 +48,10 @@ const Header = ({orders, ...props}: PropsType) => {
 
                 {cartOpen && (
                     <div className={styles.shop_cart}>
-                        {orders.map(el => {
-                            return (
-                                <Order key={el.id} item={el}/>
-                            )
-                        })}
+                        {orders.length > 0
+                            ? showOrders(orders)
+                            : showNothing()
+                        }
                     </div>
                 )}
             </div>
