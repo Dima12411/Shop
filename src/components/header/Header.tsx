@@ -1,9 +1,14 @@
 import React, {useState} from 'react';
 import styles from './Header.module.css'
 import {FaShoppingCart} from "react-icons/fa";
+import {StateItemsType} from "../../App";
+import Order from "../order/Order";
 
+type PropsType = {
+    orders: Array<StateItemsType>
+}
 
-const Header = () => {
+const Header = ({orders, ...props}: PropsType) => {
     const [cartOpen, setCartOpen] = useState<boolean>(false)
     const onClickHandler = () => {
         setCartOpen(!cartOpen)
@@ -23,7 +28,11 @@ const Header = () => {
 
                 {cartOpen && (
                     <div className={styles.shop_cart}>
-
+                        {orders.map(el => {
+                            return (
+                                <Order key={el.id} item={el}/>
+                            )
+                        })}
                     </div>
                 )}
             </div>

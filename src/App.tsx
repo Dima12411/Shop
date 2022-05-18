@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './App.module.css'
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -14,8 +14,7 @@ export type StateItemsType = {
 }
 
 function App() {
-
-    const stateItems: Array<StateItemsType> = [
+    const [stateItems, setStateItems] = useState<Array<StateItemsType>>([
         {
             id: 1,
             title: 'Стул',
@@ -65,12 +64,17 @@ function App() {
             price: '380,99'
         },
 
-    ]
+    ])
+    const [orders, setOrders] = useState<Array<StateItemsType>>([])
+
+    const addToOrder = (item: any) => {
+        setOrders([...orders, {...item}])
+    }
 
     return (
         <div className={styles.wrapper}>
-            <Header/>
-            <Items items={stateItems}/>
+            <Header orders={orders}/>
+            <Items items={stateItems} onAdd={addToOrder}/>
             <Footer/>
         </div>
     );

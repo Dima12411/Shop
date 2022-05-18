@@ -3,18 +3,20 @@ import styles from './Items.module.css'
 import {StateItemsType} from "../../App";
 import Item from "./Item/Item";
 
-type ItepmsProps = {
+type PropsType = {
     items: Array<StateItemsType>
+    onAdd: (item: any) => void
 }
 
-const Items = (props: ItepmsProps) => {
+const Items = ({items, onAdd, ...props}: PropsType) => {
     return (
         <main className={styles.main}>
-            {props.items.map(el => {
+            {items.map(el => {
                 return (
                     <Item
                         key={el.id}
                         item={el}
+                        onAdd={onAdd}
                     />
                 )
             })}
