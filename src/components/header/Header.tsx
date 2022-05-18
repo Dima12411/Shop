@@ -9,7 +9,7 @@ type PropsType = {
     onDelete: (id: number) => void
 }
 
-const Header = ({orders, ...props}: PropsType) => {
+const Header = ({orders, onDelete, ...props}: PropsType) => {
     const [cartOpen, setCartOpen] = useState<boolean>(false)
     const onClickHandler = () => {
         setCartOpen(!cartOpen)
@@ -20,7 +20,10 @@ const Header = ({orders, ...props}: PropsType) => {
             <div>
                 {orders.map(el => {
                     return (
-                        <Order key={el.id} item={el}/>
+                        <Order key={el.id}
+                               item={el}
+                               onDelete={onDelete}
+                        />
                     )
                 })}
             </div>

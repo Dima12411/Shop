@@ -5,16 +5,19 @@ import { FaTrash } from 'react-icons/fa'
 
 type PropsType = {
     item: StateItemsType
+    onDelete: (id: number) => void
 }
 
-const Order = ({item, ...props}: PropsType) => {
+const Order = ({item, onDelete, ...props}: PropsType) => {
     return (
         <div className={styles.item}>
             <img src={'./img/' + item.img} alt='Здесь дожна быть картинка'/>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
             <b>{item.price}$</b>
-            <FaTrash className={styles.delete_icon}/>
+            <FaTrash className={styles.delete_icon}
+                     onClick={() => onDelete(item.id)}
+            />
         </div>
     );
 };

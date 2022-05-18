@@ -78,7 +78,7 @@ function App() {
     }
 
     const deleteOrder = (id: number) => {
-
+        setOrders(orders.filter(el => el.id !== id ? el : ''))
     }
 
     return (
