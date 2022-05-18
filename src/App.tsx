@@ -3,6 +3,7 @@ import styles from './App.module.css'
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Items from "./components/items/Items";
+import Categories from "./components/categories/Categories";
 
 export type StateItemsType = {
     id: number
@@ -66,6 +67,7 @@ function App() {
 
     ])
     const [orders, setOrders] = useState<Array<StateItemsType>>([])
+    const [currentItems, setCurrentItems] = useState<Array<StateItemsType>>(stateItems)
 
     const addToOrder = (item: StateItemsType) => {
         let isInArray = false
@@ -81,10 +83,19 @@ function App() {
         setOrders(orders.filter(el => el.id !== id ? el : ''))
     }
 
+    const chooseCategory = (category: string) => {
+        if (category === 'all') {
+            setCurrentItems(stateItems)
+            return
+        }
+        setCurrentItems(stateItems.filter(el => el.category === category ? el : ''))
+    }
+
     return (
         <div className={styles.wrapper}>
             <Header orders={orders} onDelete={deleteOrder}/>
-            <Items items={stateItems} onAdd={addToOrder}/>
+            <Categories chooseCategory={chooseCategory}/>
+            <Items items={currentItems} onAdd={addToOrder}/>
             <Footer/>
         </div>
     );
