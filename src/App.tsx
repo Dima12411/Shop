@@ -5,6 +5,7 @@ import Footer from "./components/footer/Footer";
 import Items from "./components/items/Items";
 import Categories from "./components/categories/Categories";
 import ShowFullItem from "./components/showFulllItem/ShowFullItem";
+import img from './common/img/chair.jpg'
 
 export type StateItemsType = {
     id: number
@@ -20,7 +21,7 @@ function App() {
         {
             id: 1,
             title: 'Стул',
-            img: 'chair.jpg',
+            img: img,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'chairs',
             price: '49.99'
@@ -28,7 +29,7 @@ function App() {
         {
             id: 2,
             title: 'Стол',
-            img: 'chair.jpg',
+            img: img,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'tables',
             price: '249.00'
@@ -36,7 +37,7 @@ function App() {
         {
             id: 3,
             title: 'Диван',
-            img: 'chair.jpg',
+            img: img,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'sofas',
             price: '329.99'
@@ -44,7 +45,7 @@ function App() {
         {
             id: 4,
             title: 'Шкаф',
-            img: 'chair.jpg',
+            img: img,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'wardrobes',
             price: '110.99'
@@ -52,7 +53,7 @@ function App() {
         {
             id: 5,
             title: 'Кресло',
-            img: 'chair.jpg',
+            img: img,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'armchairs',
             price: '79.00'
@@ -60,7 +61,7 @@ function App() {
         {
             id: 6,
             title: 'Кровать',
-            img: 'chair.jpg',
+            img: img,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
             category: 'beds',
             price: '380.99'
@@ -70,6 +71,7 @@ function App() {
     const [orders, setOrders] = useState<Array<StateItemsType>>([])
     const [currentItems, setCurrentItems] = useState<Array<StateItemsType>>(stateItems)
     const [showFullItem, setShowFullItem] = useState<boolean>(false)
+    const [fullItem, setFullItem] = useState<any>({})
 
     const addToOrder = (item: StateItemsType) => {
         let isInArray = false
@@ -93,7 +95,8 @@ function App() {
         setCurrentItems(stateItems.filter(el => el.category === category ? el : ''))
     }
 
-    const onShowItem = () => {
+    const onShowItem = (item: StateItemsType) => {
+        setFullItem(item)
         setShowFullItem(!showFullItem)
     }
 
@@ -103,7 +106,7 @@ function App() {
             <Categories chooseCategory={chooseCategory}/>
             <Items items={currentItems} onAdd={addToOrder} onShowItem={onShowItem}/>
 
-            {showFullItem && <ShowFullItem/>}
+            {showFullItem && <ShowFullItem item={fullItem} onAdd={addToOrder} onShowItem={onShowItem}/>}
             <Footer/>
         </div>
     );

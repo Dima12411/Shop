@@ -6,7 +6,7 @@ import Item from "./Item/Item";
 type PropsType = {
     items: Array<StateItemsType>
     onAdd: (item: any) => void
-    onShowItem: () => void
+    onShowItem: (item: StateItemsType) => void
 }
 
 const Items = ({items, onAdd, onShowItem, ...props}: PropsType) => {

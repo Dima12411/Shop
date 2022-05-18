@@ -11,7 +11,7 @@ type PropsType = {
 const Order = ({item, onDelete, ...props}: PropsType) => {
     return (
         <div className={styles.item}>
-            <img src={'./img/' + item.img} alt='Здесь дожна быть картинка'/>
+            <img src={item.img} alt='Здесь дожна быть картинка'/>
             <h2>{item.title}</h2>
             <b>{item.price}$</b>
             <FaTrash className={styles.delete_icon}
