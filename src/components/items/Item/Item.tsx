@@ -5,12 +5,13 @@ import {StateItemsType} from "../../../App";
 type PropsType = {
     item: StateItemsType
     onAdd: (item: any) => void
+    onShowItem: () => void
 }
 
-const Item = ({item, onAdd, ...props}: PropsType) => {
+const Item = ({item, onAdd, onShowItem, ...props}: PropsType) => {
     return (
         <div className={styles.item}>
-            <img src={'./img/' + item.img} alt='Здесь дожна быть картинка'/>
+            <img src={'./img/' + item.img} alt='Здесь дожна быть картинка' onClick={() => onShowItem()}/>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
             <b>{item.price}$</b>

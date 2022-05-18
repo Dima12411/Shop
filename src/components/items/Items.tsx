@@ -6,9 +6,10 @@ import Item from "./Item/Item";
 type PropsType = {
     items: Array<StateItemsType>
     onAdd: (item: any) => void
+    onShowItem: () => void
 }
 
-const Items = ({items, onAdd, ...props}: PropsType) => {
+const Items = ({items, onAdd, onShowItem, ...props}: PropsType) => {
     return (
         <main className={styles.main}>
             {items.map(el => {
@@ -17,6 +18,7 @@ const Items = ({items, onAdd, ...props}: PropsType) => {
                         key={el.id}
                         item={el}
                         onAdd={onAdd}
+                        onShowItem={onShowItem}
                     />
                 )
             })}
