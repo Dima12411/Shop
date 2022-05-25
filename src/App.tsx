@@ -72,6 +72,8 @@ function App() {
     const [currentItems, setCurrentItems] = useState<Array<StateItemsType>>(stateItems)
     const [showFullItem, setShowFullItem] = useState<boolean>(false)
     const [fullItem, setFullItem] = useState<any>({})
+    const [numberOfOrders, setNumberOfOrders] = useState<number>(0)
+    const [count, setCount] = useState<number>(1)
 
     const addToOrder = (item: StateItemsType) => {
         let isInArray = false
@@ -81,10 +83,12 @@ function App() {
             }
         })
         !isInArray && setOrders([...orders, {...item}])
+        !isInArray && setNumberOfOrders(numberOfOrders + 1)
     }
 
     const deleteOrder = (id: number) => {
         setOrders(orders.filter(el => el.id !== id ? el : ''))
+        setNumberOfOrders(numberOfOrders - 1)
     }
 
     const chooseCategory = (category: string) => {
@@ -102,7 +106,7 @@ function App() {
 
     return (
         <div className={styles.wrapper}>
-            <Header orders={orders} onDelete={deleteOrder}/>
+            <Header orders={orders} onDelete={deleteOrder} numberOfOrders={numberOfOrders} count={count}/>
             <Categories chooseCategory={chooseCategory}/>
             <Items items={currentItems} onAdd={addToOrder} onShowItem={onShowItem}/>
 

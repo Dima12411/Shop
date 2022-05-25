@@ -23,6 +23,21 @@
     opacity: 0.5;
 }
 
+.amount_orders {
+    display: inline-block;
+    position: absolute;
+    top: -9px;
+    right: 280px;
+    font-size: 10px;
+    color: #ffffff;
+    background-color: red;
+    border-radius: 50%;
+    width: 13px;
+    font-weight: 600;
+    text-align: center;
+    z-index: 10;
+}
+
 .shop_cart_button {
     float: right;
     cursor: pointer;
@@ -32,7 +47,6 @@
 .shop_cart_button:hover,
 .shop_cart_button.active {
     color: #dc3d3d;
-    transform: scale(1.5)
 }
 
 .shop_cart {

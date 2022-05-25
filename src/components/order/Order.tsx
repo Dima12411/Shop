@@ -5,10 +5,11 @@ import { FaTrash } from 'react-icons/fa'
 
 type PropsType = {
     item: StateItemsType
+    count: number
     onDelete: (id: number) => void
 }
 
-const Order = ({item, onDelete, ...props}: PropsType) => {
+const Order = ({item, onDelete, count, ...props}: PropsType) => {
     return (
         <div className={styles.item}>
             <img src={item.img} alt='Здесь дожна быть картинка'/>

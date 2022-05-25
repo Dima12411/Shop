@@ -6,16 +6,18 @@ import Order from "../order/Order";
 
 type PropsType = {
     orders: Array<StateItemsType>
+    numberOfOrders: number
+    count: number
     onDelete: (id: number) => void
 }
 
-const Header = ({orders, onDelete, ...props}: PropsType) => {
+const Header = ({orders, onDelete, numberOfOrders, count, ...props}: PropsType) => {
     const [cartOpen, setCartOpen] = useState<boolean>(false)
     const onClickHandler = () => {
         setCartOpen(!cartOpen)
     }
 
-    const showOrders = (orders:  Array<StateItemsType>) => {
+    const showOrders = (orders: Array<StateItemsType>) => {
         let sum = 0
         orders.forEach(el => sum += Number.parseFloat(el.price))
         return (
@@ -25,6 +27,7 @@ const Header = ({orders, onDelete, ...props}: PropsType) => {
                         <Order key={el.id}
                                item={el}
                                onDelete={onDelete}
+                               count={count}
                         />
                     )
                 })}
@@ -50,6 +53,9 @@ const Header = ({orders, onDelete, ...props}: PropsType) => {
                     <li>Контакты</li>
                     <li>Кабинет</li>
                 </ul>
+                <div className={styles.amount_orders}>
+                    {numberOfOrders > 0 ? numberOfOrders : ''}
+                </div>
                 <FaShoppingCart className={styles.shop_cart_button + ' ' + `${cartOpen && 'active'}`}
                                 onClick={onClickHandler}/>
 
