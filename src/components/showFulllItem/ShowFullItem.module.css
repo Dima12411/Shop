@@ -69,9 +69,9 @@
     border: none;
     cursor: pointer;
     background-color: #d9d6d6;
-    position: relative;
-    top: -37px;
-    left: 605px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
     transition: opacity 500ms ease;
 }
 
