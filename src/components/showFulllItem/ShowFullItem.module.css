@@ -61,3 +61,20 @@
 .full_item .addToCart:hover {
     transform: scale(1.5) translateY(-5px);
 }
+
+.close_button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: #d9d6d6;
+    position: relative;
+    top: -37px;
+    left: 605px;
+    transition: opacity 500ms ease;
+}
+
+.close_button:hover {
+    opacity: 0.5;
+}

@@ -12,6 +12,8 @@ const ShowFullItem = ({item, onAdd, onShowItem, ...props}: PropsType) => {
     return (
         <div className={styles.full_item}>
             <div>
+                <button className={styles.close_button} onClick={() => onShowItem(item)}>x
+                </button>
                 <img src={item.img} alt='Здесь дожна быть картинка' onClick={() => onShowItem(item)}/>
                 <h2>{item.title}</h2>
                 <p>{item.desc}</p>
